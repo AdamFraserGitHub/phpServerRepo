@@ -9,7 +9,9 @@
     $queryString = "INSERT INTO table0 (name, age) VALUES ('adam', 16)";
 
     if($result = ($db_conn->query($queryString))) {
-        echo result;
+        while($row = $result->fetch_object()) {
+            printf("%s", $row->name);
+        }
     } else {
         echo "something broke";
     }
