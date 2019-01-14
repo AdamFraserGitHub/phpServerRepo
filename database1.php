@@ -6,8 +6,8 @@
     
     $db_conn = new mysqli($host, $username, $dbpass, $db);
 
-    $queryString = "INSERT INTO table0 (name, age) VALUES ('adam', 16)";
-
+    // $queryString = "INSERT INTO table0 (name, age) VALUES ('adam', 16)";
+    $queryString = "SELECT * FROM table0";
     if($result = ($db_conn->query($queryString))) {
         while($row = $result->fetch_object()) {
             printf("%s", $row->name);
